@@ -7,6 +7,5 @@ for _ in range(N) :
   site[a] = b
 for _ in range(M) :
   pwd.append(input())
-
 for i in pwd :
   print(site[i])
