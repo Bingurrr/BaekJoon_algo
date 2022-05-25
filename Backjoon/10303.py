@@ -12,7 +12,7 @@ while True :
         p += 1
       elif arr[j] == 0 and arr[j+1] == 1 :
         a += 1
-    if p == a :
+    if p == a or a == 0:
       print("EQUAL")
     elif p < a :
       print("ROTATE")
