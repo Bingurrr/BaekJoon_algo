@@ -12,9 +12,9 @@ int cnt;
 int cnt1, cnt2;
 
 void solve(int a, int b){
-    //시작이 W로 시작
     for(int i = a; i < a+8; i++){
         for(int j = b; j < b + 8; j++){
+            //시작이 W로 시작
             if(i%2 ==0){
                 if(j%2==0 && arr[i][j] == 'B') cnt1++;
                 if(j%2==1 && arr[i][j] == 'W') cnt1++;
@@ -23,11 +23,7 @@ void solve(int a, int b){
                 if(j%2==1 && arr[i][j] == 'B') cnt1++;
                 if(j%2==0 && arr[i][j] == 'W') cnt1++;
             }
-        }
-    }
-    //시작이 B로 시작
-    for(int i = a; i < a+8; i++){
-        for(int j = b; j < b + 8; j++){
+            //시작이 B로 시작
             if(i%2 ==0){
                 if(j%2==0 && arr[i][j] == 'W') cnt2++;
                 if(j%2==1 && arr[i][j] == 'B') cnt2++;
