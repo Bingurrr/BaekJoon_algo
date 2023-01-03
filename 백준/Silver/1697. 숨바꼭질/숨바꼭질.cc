@@ -12,7 +12,7 @@ int ans;
 int n, k;
 int a, a1, a2, a3, c;
 queue<pair<int, int>> q;
-int visited[200003];
+int visited[100053];
 
 int main(){
     ios_base::sync_with_stdio(false);
@@ -26,7 +26,7 @@ int main(){
     }
     while(!q.empty()){
         a = q.front().first;
-        if(a < -3 || a > 200002 || visited[a] ==1) {
+        if(a < -3 || a > 100050 || visited[a] ==1) {
             q.pop();
             continue;
         }
