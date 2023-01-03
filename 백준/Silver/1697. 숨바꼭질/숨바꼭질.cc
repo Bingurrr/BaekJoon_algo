@@ -26,7 +26,7 @@ int main(){
     }
     while(!q.empty()){
         a = q.front().first;
-        if(a < -3 || a > 100050 || visited[a] ==1) {
+        if(a < 0 || a > 100050 || visited[a] ==1) {
             q.pop();
             continue;
         }
