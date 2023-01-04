@@ -1,59 +1,3 @@
-// #include <iostream>
-// #include <algorithm>
-
-// using namespace std;
-
-// struct town {
-// 	int start;
-// 	int end;
-// 	int cost;
-// };
-
-// bool cmp(town x, town y) {
-// 	if (x.cost >= y.cost) return false;
-// 	else return true;
-// }
-
-// town arr[1000001];
-// int pr[100001];
-// int n, m;
-// int ans;
-// int cnt;
-
-// int find(int i) {
-// 	while (i != pr[i]) {
-// 		i = pr[i];
-// 	}
-// 	return i;
-// }
-// void uni(int p, int q, int r) {
-// 	int i = find(p);
-// 	int j = find(q);
-// 	if (i != j) {
-// 		pr[i] = j;
-// 		ans += r;
-// 		cnt++;
-// 	}
-// }
-
-// int main() {
-//     ios::sync_with_stdio(0); 
-//     cin.tie(0);
-//     cout.tie(0);
-// 	cin >> n >> m;
-// 	for (int i = 0; i < m; i++) {
-// 		cin >> arr[i].start >> arr[i].end >> arr[i].cost;
-// 	}
-// 	// init
-// 	sort(arr, arr + m, cmp);
-// 	for (int i = 0; i < m; i++) {
-// 		uni(arr[i].start, arr[i].end, arr[i].cost);
-// 		if (cnt == n - 2) break;
-// 	}
-// 	cout << ans;
-// 	return 0;
-// }
-
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -119,3 +63,59 @@ int main() {
 
 	return 0;
 }
+
+// #include <iostream>
+// #include <algorithm>
+
+// using namespace std;
+
+// struct town {
+// 	int start;
+// 	int end;
+// 	int cost;
+// };
+
+// bool cmp(town x, town y) {
+// 	if (x.cost >= y.cost) return false;
+// 	else return true;
+// }
+
+// town arr[1000001];
+// int pr[100001];
+// int n, m;
+// int ans;
+// int cnt;
+
+// int find(int i) {
+// 	while (i != pr[i]) {
+// 		i = pr[i];
+// 	}
+// 	return i;
+// }
+// void uni(int p, int q, int r) {
+// 	int i = find(p);
+// 	int j = find(q);
+// 	if (i != j) {
+// 		pr[i] = j;
+// 		ans += r;
+// 		cnt++;
+// 	}
+// }
+
+// int main() {
+//     ios::sync_with_stdio(0); 
+//     cin.tie(0);
+//     cout.tie(0);
+// 	cin >> n >> m;
+// 	for (int i = 0; i < m; i++) {
+// 		cin >> arr[i].start >> arr[i].end >> arr[i].cost;
+// 	}
+// 	// init
+// 	sort(arr, arr + m, cmp);
+// 	for (int i = 0; i < m; i++) {
+// 		uni(arr[i].start, arr[i].end, arr[i].cost);
+// 		if (cnt == n - 2) break;
+// 	}
+// 	cout << ans;
+// 	return 0;
+// }
