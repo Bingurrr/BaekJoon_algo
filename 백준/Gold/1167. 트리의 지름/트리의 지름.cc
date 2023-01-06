@@ -22,9 +22,9 @@ void solve(int k, int cost){
         ans = cost;
         far_vertex = k;
     }
-    for(auto i : v[k]){
-        int x = i.first;
-        int y = i.second;
+    for(int i = 0; i < v[k].size(); i++){
+        int x = v[k][i].first;
+        int y = v[k][i].second;
         solve(x, y+cost);
     }
 }
@@ -41,7 +41,6 @@ int main(){
             if(target==-1) break;
             cin >> dist;
             v[num].push_back({target, dist});
-            v[target].push_back({num, dist});
         }
     }
     solve(1, 0);
