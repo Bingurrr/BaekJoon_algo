@@ -25,7 +25,7 @@ int main(){
     dp[3] = 22;
     k = 1;
     for(int i = 4; i <= n; i++){
-        k = (dp[i-3] +k);
+        k += dp[i-3];
         dp[i] = (k*2 + dp[i-2]*3 + dp[i-1]*2) %mod;
     }
     cout << dp[n];
