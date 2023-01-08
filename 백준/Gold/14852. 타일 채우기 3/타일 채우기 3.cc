@@ -29,8 +29,8 @@ int main(){
     long long int b = 3;
     long long int c = 2;
     for(int i = 4; i <= n; i++){
-        s[i] = (dp[i-3] + s[i-1])%mod;
-        dp[i] = (s[i]*a%mod + dp[i-2]*b%mod + dp[i-1]*c%mod + mod) %mod;
+        s[i] = (dp[i-3] + s[i-1]);
+        dp[i] = (s[i]*a + dp[i-2]*b + dp[i-1]*c) %mod;
     }
     cout << dp[n];
 	return 0; 
