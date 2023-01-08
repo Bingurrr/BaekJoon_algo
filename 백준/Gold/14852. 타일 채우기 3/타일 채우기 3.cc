@@ -23,14 +23,10 @@ int main(){
     dp[1] = 2;
     dp[2] = 7;
     dp[3] = 22;
-
     k = 1;
-    long long int a = 2;
-    long long int b = 3;
-    long long int c = 2;
     for(int i = 4; i <= n; i++){
         k = (dp[i-3] +k);
-        dp[i] = (k*a + dp[i-2]*b + dp[i-1]*c) %mod;
+        dp[i] = (k*2 + dp[i-2]*3 + dp[i-1]*2) %mod;
     }
     cout << dp[n];
 	return 0; 
