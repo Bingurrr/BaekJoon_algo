@@ -17,22 +17,24 @@ N, K = map(int,input().split())
 
   2**x(k비트 숫자)
 """
-if N == K :
+
+if N <= K :
   print(0)
 else :
   a = N
   sum = 0
-  tt = 0
+  tmp = 0
   while K != 0 :
     if N == 0 : 
       break
-    tt = 2**(int(math.log(N,2)))
-    if N == 1 : tt = 1
+    tmp = 2**(int(math.log(N,2)))
+    if N == 1 : tmp = 1
     if K == 1 :
-      tt = 2**(int(math.log(N,2))+1)
+      tmp = 2**(int(math.log(N,2))+1)
       if math.log(N,2) == int(math.log(N,2)) :
-        tt = int(2**(math.log(N,2)))
-    N = N - tt
+        tmp = int(2**(math.log(N,2)))
+    N = N - tmp
     K = K - 1
-    sum = sum + tt
+    sum = sum + tmp
+    
   print(sum - a)
