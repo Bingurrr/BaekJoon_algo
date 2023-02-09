@@ -9,10 +9,12 @@
 #include <cstring>
 #include <map>
 #include <stack>
+#define MAX 100000001
 using namespace std;
 
-int n, k;
-stack<pair<int,int>> st;
+int n, max_value;;
+int arr[500001];
+int ans[500001];
 
 
 int main(){
@@ -20,20 +22,19 @@ int main(){
     cin.tie(0);
     cout.tie(0);
     cin >> n;
-    
+    arr[0] = MAX;
     for(int i = 1; i <= n; i++){
-        cin >> k;
-
-        while(!st.empty()){
-            if(st.top().second > k){
-                break;
-            }
-            st.pop();
+        cin >> arr[i];
+        int j = i-1;
+        
+        while(arr[j] < arr[i]){
+            j = ans[j];
         }
+        ans[i] = j;
+    }
 
-        cout << (st.empty()?0:st.top().first) << ' ';
-
-        st.push({i,k});
+    for(int i = 1; i <= n; i++){
+        cout << ans[i] << ' ';
     }
     
     return 0;
