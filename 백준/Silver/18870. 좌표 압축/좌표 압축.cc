@@ -12,6 +12,7 @@ int n, k;
 int last_value, cnt;
 priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>> pq;
 int ans[1000001];
+
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(0);
