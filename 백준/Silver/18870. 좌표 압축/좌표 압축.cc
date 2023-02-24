@@ -5,40 +5,48 @@
 #include <bitset>
 #include <set>
 #include <vector>
+#include <string>
+#include <cstring>
+#define INF 987654321
 
 using namespace std;
 
-int n, k;
-int last_value, cnt;
-priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>> pq;
+int n,x;
 int ans[1000001];
+vector<pair<int,int>> v;
+bool cmp(pair<int,int> a, pair<int, int> b){
+    return a.second < b.second;
+}
+
+
 
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(0);
-    cout.tie(0);	
-	cin >> n;
+    cout.tie(0);
+
+    cin >> n;
     for(int i = 0; i < n; i++){
-        cin >> k;
-        pq.push({k,i});
+        cin >> x;
+        v.push_back({i,x});
     }
-    while(!pq.empty()){
-        int t = pq.top().first;
-        int s = pq.top().second;
-        pq.pop();
-        if(t==last_value){
-            ans[s] = cnt-1;
-            continue;
-        }
-        else{
-            last_value = t;
-            ans[s] = cnt;
+    sort(v.begin(), v.end(), cmp);
+
+    int cnt = 0;
+    // 시작
+    ans[v[0].first] = cnt;
+    
+    
+    for(int i = 1; i < n; i++){
+        int idx = v[i].first;
+        if(v[i-1].second != v[i].second){
             cnt++;
         }
+        ans[idx] = cnt;
     }
     for(int i = 0; i < n; i++){
         cout << ans[i] << " ";
     }
-
-	return 0; 
+    
+	return 0;
 }
