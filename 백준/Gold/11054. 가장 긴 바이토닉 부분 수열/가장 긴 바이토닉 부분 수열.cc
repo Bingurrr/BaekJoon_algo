@@ -17,7 +17,7 @@ int n;
 int arr[1001];
 int dp1[1001];
 int dp2[1001];
-int m1, m2, ans;
+int ans;
 
 
 int main(){
@@ -30,7 +30,7 @@ int main(){
     for(int i = 0; i < n; i++){
         cin >> arr[i];
     }
-    dp1[0] = 1;
+    
     for(int i = 0; i < n; i++){
         dp1[i] = 1;
         for(int j = 0; j < i; j++){
